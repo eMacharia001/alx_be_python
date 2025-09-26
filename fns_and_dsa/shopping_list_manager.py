@@ -8,33 +8,30 @@ def display_menu():
     print("4. Exit")
 
 def main():
-    # Explicit array implementation
-    shopping_list = []
+    shopping_list = []  # Explicit array
 
     while True:
-        # Call the menu function
-        display_menu()
+        display_menu()  # Call the menu function
 
-        # Choice input as a number
-        choice = int(input("Enter your choice: "))
+        choice = int(input("Enter your choice: "))  # Input as number
 
         if choice == 1:
             item = input("Enter item to add: ")
             shopping_list.append(item)
-            print(f"{item} added to the shopping list.")
+            print(item, "added to the shopping list.")
 
         elif choice == 2:
             item = input("Enter item to remove: ")
             if item in shopping_list:
                 shopping_list.remove(item)
-                print(f"{item} removed from the shopping list.")
+                print(item, "removed from the shopping list.")
             else:
-                print(f"{item} not found in the shopping list.")
+                print(item, "not found in the shopping list.")
 
         elif choice == 3:
             print("Shopping List:")
-            for i in shopping_list:
-                print(i)
+            for item in shopping_list:
+                print(item)
 
         elif choice == 4:
             print("Goodbye!")
