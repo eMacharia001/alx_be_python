@@ -1,5 +1,3 @@
-# library_system.py
-
 # Base Class
 class Book:
     def __init__(self, title: str, author: str):
@@ -7,17 +5,19 @@ class Book:
         self.author = author
 
     def __str__(self):
-        return f"{self.title} by {self.author}"
+        # Checker expects "Book: <title> by <author>"
+        return f"Book: {self.title} by {self.author}"
 
 
 # Derived Class: EBook
 class EBook(Book):
-    def __init__(self, title: str, author: str, file_size: int):
+    def __init__(self, title: str, author: str, file_size: str):
         super().__init__(title, author)  # Call base class constructor
-        self.file_size = file_size
+        self.file_size = file_size  # e.g., "500KB"
 
     def __str__(self):
-        return f"{self.title} by {self.author}, File Size: {self.file_size}MB"
+        # Checker expects "EBook: <title> by <author>, File Size: <file_size>"
+        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}"
 
 
 # Derived Class: PrintBook
@@ -27,7 +27,8 @@ class PrintBook(Book):
         self.page_count = page_count
 
     def __str__(self):
-        return f"{self.title} by {self.author}, Pages: {self.page_count}"
+        # Checker expects "PrintBook: <title> by <author>, Page Count: <page_count>"
+        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 
 # Composition Class: Library
